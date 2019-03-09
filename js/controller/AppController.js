@@ -1,7 +1,7 @@
-app.controller('AppController', ['$scope','$location',function(Scope,$location){
-	console.log("hello world");
-	Scope.login = function(){
+app.controller('AppController', ['$scope','$location','$rootScope',function(Scope, $location, RootScope){
+	Scope.logout = function(){
 		localStorage.clear();
 		$location.path("/login");
+		RootScope.authroize = false;
 	}
 }]); 

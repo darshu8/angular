@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope','$location',function(Scope,location){
+app.controller('LoginController', ['$scope','$location', '$rootScope',function(Scope, location, RootScope){
 	console.log("hello world");
 	Scope.msg="hello from login";
 	Scope.login = function(){
@@ -9,6 +9,7 @@ app.controller('LoginController', ['$scope','$location',function(Scope,location)
 			var user = JSON.stringify(obj);
 			localStorage.setItem("user",user);
 			location.path("/home");
+			RootScope.authroize =true;
 		}
 		else{
 			Scope.errMsg="Invalid username/password";

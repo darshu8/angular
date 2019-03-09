@@ -1,1 +1,12 @@
-this home page
+<div ng-show="progress" style="margin-left:45%" >
+        <img src="https://i.stack.imgur.com/y3Hm3.gif"  width="40" height="40">        
+</div>
+
+<div class="media card" ng-repeat="list in lists">
+    <img src="{{list.url}}" class="align-self-start mr-3" width="40" height="40">
+    <div class="media-body">
+      <p>{{list.title}}</p>
+    </div>
+  </div>
+
+  {{err}}
